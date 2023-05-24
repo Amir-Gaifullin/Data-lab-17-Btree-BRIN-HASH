@@ -61,6 +61,18 @@ CREATE INDEX product3_name_idx ON product3 USING hash (name);
 
 
 
+## Size of indexes
+
+### For Product1(Btree) table
+<img width="365" alt="Снимок экрана 2023-05-24 в 17 55 45" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/850d0433-be78-4966-bc7d-4e4b98639f9d">
+
+### For Product2(BRIN) table
+<img width="364" alt="Снимок экрана 2023-05-24 в 17 56 45" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/2f2894fb-e5c5-4dda-9de2-d755d36fe49d">
+
+
+### For Product3(HASH) table
+<img width="360" alt="Снимок экрана 2023-05-24 в 17 56 59" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/10e2e61f-cdbf-44e1-b6db-754e0a1780b5">
+
 
 ## Benchmark Commands
 
