@@ -56,23 +56,20 @@ CREATE INDEX product3_name_idx ON product3 USING hash (name);
 ```
 
 * flyway migrate:
-<img width="761" alt="Снимок экрана 2023-05-10 в 16 51 27" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/62fd3728-da9e-4424-aef7-0ed76b0644a7">
-<img width="1447" alt="Снимок экрана 2023-05-10 в 16 51 47" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/760def87-3d39-4927-bd63-3e2a4d72f563">
-
+<img width="892" alt="Снимок экрана 2023-05-24 в 20 40 14" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/4d3104ba-1ac7-479f-b4de-4ca4a4a1b287">
 
 
 ## Size of indexes
 
 ### For Product1(Btree) table
-<img width="365" alt="Снимок экрана 2023-05-24 в 17 55 45" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/850d0433-be78-4966-bc7d-4e4b98639f9d">
+<img width="378" alt="Снимок экрана 2023-05-24 в 20 41 20" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/fc65796a-d439-4b5e-80de-7ef0aa242651">
+
 
 ### For Product2(BRIN) table
-<img width="364" alt="Снимок экрана 2023-05-24 в 17 56 45" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/2f2894fb-e5c5-4dda-9de2-d755d36fe49d">
-
+<img width="364" alt="Снимок экрана 2023-05-24 в 20 41 37" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/d90daa3b-bba4-439b-9fa1-27b867f27fc9">
 
 ### For Product3(HASH) table
-<img width="360" alt="Снимок экрана 2023-05-24 в 17 56 59" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/10e2e61f-cdbf-44e1-b6db-754e0a1780b5">
-
+<img width="361" alt="Снимок экрана 2023-05-24 в 20 42 09" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/5e0e7965-060a-4bec-962a-f85f875a9fc6">
 
 ## Benchmark Commands
 
@@ -83,25 +80,29 @@ pgbench -c 10 -T 300 flyway_test -f <(echo "SELECT * FROM product1 WHERE name = 
 ```
 
 Result:
-![telegram-cloud-photo-size-2-5395564228108209396-y](https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/b2aae918-e5d9-4b18-865d-0fbf27dcbf29)
+
+<img width="896" alt="Снимок экрана 2023-05-24 в 21 21 14" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/ff609455-5782-4940-9370-a1cfb7647298">
 
 
 ### For Product2(BRIN) table
 
 ```
-pgbench -c 10 -T 300 flyway_test -f <(echo "SELECT * FROM product2 WHERE name = 'Product0.11508160875507456';")
+pgbench -c 10 -T 300 flyway_test -f <(echo "SELECT * FROM product2 WHERE name = 'Product0.8627514487373578';")
 ```
 
 Result:
-<img width="1022" alt="Снимок экрана 2023-05-10 в 19 37 24" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/5ce4a1f5-bce3-4071-bf47-68d3748b8c37">
 
+<img width="880" alt="Снимок экрана 2023-05-24 в 21 43 37" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/c1f66d4e-5bfb-4376-bd9b-18109e387085">
 
 ### For Product3(HASH) table
 
 ```
-pgbench -c 10 -T 300 flyway_test -f <(echo "SELECT * FROM product2 WHERE name = 'Product0.02984555856039517';")
+pgbench -c 10 -T 300 flyway_test -f <(echo "SELECT * FROM product3 WHERE name = 'Product0.02984555856039517';")
 ```
 
 Result:
-<img width="1002" alt="Снимок экрана 2023-05-10 в 19 43 06" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/033c1a42-d152-47d8-bcfe-cb26a8367521">
+
+<img width="886" alt="Снимок экрана 2023-05-24 в 21 37 21" src="https://github.com/Amir-Gaifullin/Data-lab-17-Btree-BRIN-HASH/assets/47780452/50bc54dd-889f-4578-91e9-a65fc1832783">
+
+
 
